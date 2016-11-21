@@ -2,3 +2,11 @@
   <img alt="rentoo" src="rentoo.png">
   <h1> Welcome {{ current_user.email }}</h1>
 </div>
+
+<div class="jumbotron login">
+  <div class="container">
+    <form class="form-group row" ng-submit="submitRegistration(registrationForm)" role="form" ng-init="registrationForm = {}">
+      <button class="btn btn-lg btn-danger" ng-click="signOut()">Logout</button>
+    </form>
+  </div>
+</div>

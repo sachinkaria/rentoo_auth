@@ -22,6 +22,16 @@ app.controller('MainCtrl', ['$scope','$auth',function($scope, $auth){
     });
   };
 
+  $scope.handleSignOutBtnClick = function() {
+  $auth.signOut()
+    .then(function(resp) {
+      console.log('SUCCESS');
+    })
+    .catch(function(resp) {
+      console.log('FAILED.');
+    });
+};
+
   $scope.signUp = function(){
     $scope.signedUp = true;
   };
