@@ -1,0 +1,25 @@
+<br>
+<div class="header">
+  <img alt="rentoo" src="rentoo.png">
+  <h1> Sign up to Rentoo! </h1>
+</div>
+<div class="jumbotron login">
+  <div class="container">
+    <form class="form-group row" ng-submit="submitRegistration(registrationForm)" role="form" ng-init="registrationForm = {}">
+      <div ng-show="!signedUp" class="form-group">
+        <input class="form-control" placeholder="Email" type="email" name="email" ng-model="registrationForm.email" required="required" class="form-control"/>
+      </div>
+
+      <div ng-show="!signedUp" class="form-group">
+        <input class="form-control" placeholder="Password" type="password" name="password" ng-model="registrationForm.password" required="required" class="form-control"/>
+      </div>
+
+      <div ng-show="!signedUp" class="form-group">
+        <input class="form-control" placeholder="Password Confirmation" type="password" name="password_confirmation" ng-model="registrationForm.password_confirmation" required="required" class="form-control"/>
+      </div>
+
+      <button type="submit" class="btn btn-lg btn-success" ng-show="!signedUp" ng-click="signUp()" class="btn btn-primary btn-lg">Register</button>
+      <button ng-show="signedUp" class="btn btn-lg btn-primary" ng-click="submitLogin(registrationForm)">Login</button>
+    </form>
+  </div>
+</div>

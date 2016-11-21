@@ -1,0 +1,19 @@
+.header.ng-scope{
+  text-align: center;
+  font-family: 'Raleway', sans-serif;
+}
+
+.jumbotron {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.jumbotron.login{
+  float: none;
+  margin: 0 auto;
+  margin-top: 2%;
+  text-align: center;
+  max-width: 400px;
+  border-radius: 10px;
+  opacity: 0.8;
+}
