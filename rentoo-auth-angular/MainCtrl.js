@@ -1,6 +1,8 @@
-app.controller('MainCtrl', ['$scope','$auth',function($scope, $auth){
-  $scope.signedUp = false;
+app.controller('MainCtrl', ['$scope','$auth','CardsService',function($scope, $auth, CardsService){
+  this.signedUp = true;
+  $scope.cards = [];
   $scope.current_user = $auth.user;
+  $scope.registrationForm = {};
 
   $scope.handleRegBtnClick = function() {
     $auth.submitRegistration($scope.registrationForm)
@@ -36,4 +38,18 @@ app.controller('MainCtrl', ['$scope','$auth',function($scope, $auth){
     $scope.signedUp = true;
   };
 
+  $scope.createCard = function(card){
+    CardsService.createCard(card).then(function(){
+      $scope.getCards();
+    });
+  }
+
+  $scope.getCards = function(){
+  return CardsService.getCards().then(function(response){
+    $scope.cards = response.data;
+    console.log($scope.cards);
+  });
+};
+
+  $scope.getCards();
 }]);
