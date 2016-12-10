@@ -1,6 +1,6 @@
 <div class="header">
-  <img alt="rentoo" src="rentoo.png">
-  <h1> Welcome {{ current_user.email }}</h1>
+  <h2> STAR Cards </h2>
+  <h3> Home</h3>
 </div>
 
 <form class="form-inline">
@@ -10,24 +10,15 @@
     <input class="form-control" placeholder="task" type="text" ng-model="card.task">
     <input class="form-control" placeholder="action" type="text" ng-model="card.action">
     <input class="form-control" placeholder="result" type="text" ng-model="card.result">
-
-    <button class="btn btn-default" ng-click="createCard(card)">Create Card</button>
+    <button class="btn btn-lg btn-default" ng-click="createCard(card)">Create Card</button>
   </div>
 </form>
-<div  ng-repeat="card in cards" class="jumbotron login">
-  <div>
-    <p> {{card.title}} </p>
-    <p> Situation: {{card.situation}} </p>
-    <p> Task: {{card.task}} </p>
-    <p> Action: {{card.action}} </p>
-    <p> Result: {{card.result}} </p>
-  </div>
-</div>
 
-<div class="jumbotron login">
+
   <div class="container">
     <form class="form-group row" ng-submit="submitRegistration(registrationForm)" role="form" ng-init="registrationForm = {}">
       <button class="btn btn-lg btn-danger" ng-click="signOut()">Logout</button>
     </form>
   </div>
-</div>
+
+<button class="btn btn-lg btn-primary" ui-sref="index" ui-sref-active="active">Cards</button>

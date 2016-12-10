@@ -36,7 +36,18 @@ app.config(['$stateProvider','$urlRouterProvider','$authProvider', function($sta
           }
         }
       }
+    })
+    .state('index', {
+      name: 'index',
+      url: '/index',
+      views: {
+        content: {
+          templateUrl: 'templates/index.html',
+          controller: 'MainCtrl'
+        }
+      }
     });
+
 
 
   $urlRouterProvider.otherwise('/');
